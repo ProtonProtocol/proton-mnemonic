@@ -23,15 +23,24 @@ npm install eosio-mnemonic
 ```ts
 import { Mnemonic } from 'eosio-mnemonic'
 
+/**
+ * mnemonic.phrase: e.g. 'reflect note upgrade mention marine sword track pride robust vessel tube sausage kind trick neglect'
+ */
 const mnemonic = new Mnemonic()
 
-// e.g. 'lava plunge enough prosper tumble achieve regular glue paddle abstract gaze absurd edit voyage explain'
-console.log(mnemonic.phrase)
-
+/**
+ * Keys
+ *  - publicKey: e.g. PUB_K1_71ESPbpkYsR9iQd1tgqxqZqUJFX8veJGUS5RnGGekq4Vb1ExPj
+ *  - privateKey: e.g. PVT_K1_du8FBHSYpapVw17ZmWBU3u3dBCARMFe54X49yfPrFCUoXpADk
+ */
 const { publicKey, privateKey } = mnemonic.keyPairAtIndex(0)
 
-// e.g. 'PUB_K1_6Xw8mKbHErkRWw1ysNiaWZo48jqKMrc6geGmbo3cGzvuLRB3Nz' 'PVT_K1_W465v1XbJY1mF4TbyQ3kzeLX2f63Ziv6NLatUxdd9nAion73H'
-console.log(publicKey, privateKey)
+/**
+ * Legacy Keys
+ *  - publicKeyLegacy: e.g. EOS71ESPbpkYsR9iQd1tgqxqZqUJFX8veJGUS5RnGGekq4Vd64yg6
+ *  - privateKeyLegacy: e.g. 5JTBhvdNX1Pa5WKH9mDQGWo2GE17NZDLMt8JHL2Qdj6qeTjzqE6
+ */
+const { publicKey: publicKeyLegacy, privateKey: privateKeyLegacy } = mnemonic.keyPairAtIndex(0, true)
 ```
 
 ## Options

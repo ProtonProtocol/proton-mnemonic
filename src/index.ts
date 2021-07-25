@@ -1,1 +1,1 @@
-export { Mnemonic } from './keys'
+export { Mnemonic } from './keys';

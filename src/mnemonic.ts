@@ -87,13 +87,13 @@ export const generateMnemonic = (strength: number) => {
 };
 
 export const calcBip32ExtendedKey = ({
-    mnemonic,
-    passphrase,
-    derivationPath
+  mnemonic,
+  passphrase,
+  derivationPath,
 }: {
-    mnemonic: string,
-  passphrase?: string,
-  derivationPath: string
+  mnemonic: string;
+  passphrase?: string;
+  derivationPath: string;
 }) => {
   const seed = mnemonicToSeedSync(mnemonic, passphrase);
   let extendedKey: BIP32Interface = fromSeed(seed, undefined);

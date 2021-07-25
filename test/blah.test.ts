@@ -1,7 +1,8 @@
-import { sum } from '../src';
+import { Mnemonic } from '../src';
 
-describe('blah', () => {
+describe('Mnemonic', () => {
   it('works', () => {
-    expect(sum(1, 1)).toEqual(2);
+    const mnemonic = new Mnemonic()
+    expect(true).toEqual(true);
   });
 });

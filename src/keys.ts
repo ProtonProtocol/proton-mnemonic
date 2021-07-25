@@ -21,7 +21,7 @@ export class Mnemonic {
         phrase?: string,
         passphrase?: string,
         numWords?: number,
-    }) {
+    } = {}) {
         this.numWords = numWords || this.numWords
         this.phrase = phrase || generateMnemonic(this.strength)
         this.passphrase = passphrase

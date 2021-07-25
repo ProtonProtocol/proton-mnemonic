@@ -24,9 +24,13 @@ npm install eosio-mnemonic
 import { Mnemonic } from 'eosio-mnemonic'
 
 const mnemonic = new Mnemonic()
+
+// e.g. 'lava plunge enough prosper tumble achieve regular glue paddle abstract gaze absurd edit voyage explain'
 console.log(mnemonic.phrase)
 
 const { publicKey, privateKey } = mnemonic.keyPairAtIndex(0)
+
+// e.g. 'PUB_K1_6Xw8mKbHErkRWw1ysNiaWZo48jqKMrc6geGmbo3cGzvuLRB3Nz' 'PVT_K1_W465v1XbJY1mF4TbyQ3kzeLX2f63Ziv6NLatUxdd9nAion73H'
 console.log(publicKey, privateKey)
 ```
 

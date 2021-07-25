@@ -10,7 +10,7 @@
   </a>
 </p>
 
-> Generate EOSIO Mnemonics and associated public/private keys
+> Generate BIP39+BIP44 compatible EOSIO mnemonic phrases
 
 ## Install
 

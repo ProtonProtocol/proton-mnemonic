@@ -1,12 +1,16 @@
 import { Mnemonic } from '../src';
 
 const phrase =
-  'lava plunge enough prosper tumble achieve regular glue paddle abstract gaze absurd edit voyage explain';
+  'reflect note upgrade mention marine sword track pride robust vessel tube sausage kind trick neglect';
 const index = 0;
 const publicKeyMock =
-  'PUB_K1_6Xw8mKbHErkRWw1ysNiaWZo48jqKMrc6geGmbo3cGzvuLRB3Nz';
+  'PUB_K1_71ESPbpkYsR9iQd1tgqxqZqUJFX8veJGUS5RnGGekq4Vb1ExPj';
 const privateKeyMock =
-  'PVT_K1_W465v1XbJY1mF4TbyQ3kzeLX2f63Ziv6NLatUxdd9nAion73H';
+  'PVT_K1_du8FBHSYpapVw17ZmWBU3u3dBCARMFe54X49yfPrFCUoXpADk';
+const publicKeyLegacyMock =
+  'EOS71ESPbpkYsR9iQd1tgqxqZqUJFX8veJGUS5RnGGekq4Vd64yg6';
+const privateKeyLegacyMock =
+  '5JTBhvdNX1Pa5WKH9mDQGWo2GE17NZDLMt8JHL2Qdj6qeTjzqE6';
 
 describe('Mnemonic', () => {
   it('Phrase works', () => {
@@ -15,10 +19,11 @@ describe('Mnemonic', () => {
     expect(publicKey).toEqual(publicKeyMock);
     expect(privateKey).toEqual(privateKeyMock);
 
-    const { publicKey: a, privateKey: b } = mnemonic.keyPairAtIndex(
-      index,
-      true
-    );
-    console.log(a, b);
+    const {
+      publicKey: publicKeyLegacy,
+      privateKey: privateKeyLegacy,
+    } = mnemonic.keyPairAtIndex(index, true);
+    expect(publicKeyLegacy).toEqual(publicKeyLegacyMock);
+    expect(privateKeyLegacy).toEqual(privateKeyLegacyMock);
   });
 });

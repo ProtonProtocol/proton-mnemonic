@@ -55,8 +55,8 @@
   },
   "dependencies": {
     "@jafri/isomorphic-webcrypto": "2.3.8",
+    "@proton/bip32": "^3.0.1",
     "@proton/js": "^26.1.15",
-    "bip32": "^3.0.1",
     "bip39": "^3.0.4",
     "hash.js": "^1.1.7",
     "tiny-secp256k1": "^2.2.1"

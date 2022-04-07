@@ -1,5 +1,5 @@
 import { sha256 } from 'hash.js';
-import BIP32Factory, { BIP32Interface } from 'bip32';
+import BIP32Factory, { BIP32Interface } from '@proton/bip32';
 import * as ecc from 'tiny-secp256k1';
 import { mnemonicToSeedSync } from 'bip39';
 import { wordlist } from './wordlist';

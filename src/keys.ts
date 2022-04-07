@@ -1,5 +1,5 @@
 import { Numeric } from '@proton/js';
-import { BIP32Interface } from 'bip32';
+import { BIP32Interface } from '@proton/bip32';
 import { calcBip32ExtendedKey, generateMnemonic } from './mnemonic';
 
 export class Mnemonic {

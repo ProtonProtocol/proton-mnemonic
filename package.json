@@ -14,17 +14,17 @@
     "node": ">=14"
   },
   "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build",
-    "test": "tsdx test",
-    "lint": "tsdx lint",
-    "prepare": "tsdx build",
+    "start": "npx tsdx watch",
+    "build": "npx tsdx build",
+    "test": "npx tsdx test",
+    "lint": "npx tsdx lint",
+    "prepare": "npx tsdx build",
     "size": "size-limit",
     "analyze": "size-limit --why"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "tsdx lint"
+      "pre-commit": "npx tsdx lint"
     }
   },
   "prettier": {
@@ -45,6 +45,7 @@
   ],
   "devDependencies": {
     "@size-limit/preset-small-lib": "^7.0.8",
+    "@types/jest": "^27.4.1",
     "husky": "^7.0.1",
     "size-limit": "^5.0.1",
     "tsdx": "^0.14.1",
@@ -54,9 +55,10 @@
   },
   "dependencies": {
     "@jafri/isomorphic-webcrypto": "2.3.8",
-    "@proton/js": "^25.0.25",
-    "bip32": "^2.0.6",
+    "@proton/js": "^26.1.15",
+    "bip32": "^3.0.1",
     "bip39": "^3.0.4",
-    "hash.js": "^1.1.7"
+    "hash.js": "^1.1.7",
+    "tiny-secp256k1": "^2.2.1"
   }
 }

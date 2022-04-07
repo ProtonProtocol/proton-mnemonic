@@ -34,14 +34,13 @@ export class Mnemonic {
 
   keyPairAtIndex(index: number, oldFormat?: boolean) {
     const key = this.bip32ExtendedKey.derive(index);
-
     const publicKeyRaw = {
       type: Numeric.KeyType.k1,
-      data: new Uint8Array(key.publicKey.buffer),
+      data: new Uint8Array(key.publicKey),
     };
     const privateKeyRaw = {
       type: Numeric.KeyType.k1,
-      data: new Uint8Array(key.privateKey!.buffer),
+      data: new Uint8Array(key.privateKey!),
     };
 
     let publicKey: string;
@@ -51,7 +50,6 @@ export class Mnemonic {
       publicKey = Numeric.publicKeyToLegacyString(publicKeyRaw);
       privateKey = Numeric.privateKeyToLegacyString(privateKeyRaw);
     } else {
-      console.log(publicKeyRaw.type, publicKeyRaw.data.length);
       publicKey = Numeric.publicKeyToString(publicKeyRaw);
       privateKey = Numeric.privateKeyToString(privateKeyRaw);
     }

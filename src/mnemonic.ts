@@ -1,8 +1,12 @@
 import { sha256 } from 'hash.js';
-import { BIP32Interface, fromSeed } from 'bip32';
+import BIP32Factory, { BIP32Interface } from 'bip32';
+import * as ecc from 'tiny-secp256k1';
 import { mnemonicToSeedSync } from 'bip39';
 import { wordlist } from './wordlist';
 import crypto from '@jafri/isomorphic-webcrypto';
+
+// You must wrap a tiny-secp256k1 compatible implementation
+const bip32 = BIP32Factory(ecc);
 
 /**
  * Next 4 functions from https://github.com/polkadot-js/common
@@ -66,7 +70,7 @@ export const calcBip32ExtendedKey = ({
   derivationPath: string;
 }) => {
   const seed = mnemonicToSeedSync(mnemonic, passphrase);
-  let extendedKey: BIP32Interface = fromSeed(seed, undefined);
+  let extendedKey: BIP32Interface = bip32.fromSeed(seed, undefined);
 
   // Derive the key from the path
   const pathBits = derivationPath.split('/');

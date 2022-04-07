@@ -51,7 +51,7 @@ export class Mnemonic {
       publicKey = Numeric.publicKeyToLegacyString(publicKeyRaw);
       privateKey = Numeric.privateKeyToLegacyString(privateKeyRaw);
     } else {
-      console.log(publicKeyRaw.type, publicKeyRaw.data.length)
+      console.log(publicKeyRaw.type, publicKeyRaw.data.length);
       publicKey = Numeric.publicKeyToString(publicKeyRaw);
       privateKey = Numeric.privateKeyToString(privateKeyRaw);
     }

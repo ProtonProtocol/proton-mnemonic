@@ -2,7 +2,7 @@ import { sha256 } from 'hash.js';
 import { BIP32Interface, fromSeed } from 'bip32';
 import { mnemonicToSeedSync } from 'bip39';
 import { wordlist } from './wordlist';
-import { getRandomValues } from './getRandomValues'
+import crypto from '@jafri/isomorphic-webcrypto'
 
 /**
  * Next 4 functions from https://github.com/polkadot-js/common
@@ -50,7 +50,7 @@ export const generateMnemonic = (strength: number) => {
     throw 'Strength should be divisible by 32, but it is not (' + r + ').';
   }
   const buffer = new Uint8Array(strength / 8);
-  const data = getRandomValues(buffer);
+  const data = crypto.getRandomValues(buffer);
   return entropyToMnemonic(data);
 };
 

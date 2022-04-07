@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to EOSIO Mnemonic 👋</h1>
+<h1 align="center">Welcome to Proton Mnemonic 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
   <img src="https://img.shields.io/badge/node-%3E%3D12-blue.svg" />
@@ -10,18 +10,18 @@
   </a>
 </p>
 
-> Generate BIP39+BIP44 compatible EOSIO mnemonic phrases
+> Generate BIP39+BIP44 compatible Proton mnemonic phrases
 
 ## Install
 
 ```sh
-npm install eosio-mnemonic
+npm install @proton/mnemonic
 ```
 
 ## Usage
 
 ```ts
-import { Mnemonic } from 'eosio-mnemonic'
+import { Mnemonic } from '@proton/mnemonic'
 
 /**
  * mnemonic.phrase: e.g. 'reflect note upgrade mention marine sword track pride robust vessel tube sausage kind trick neglect'

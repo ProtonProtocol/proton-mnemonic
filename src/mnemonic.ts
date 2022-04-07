@@ -2,7 +2,7 @@ import { sha256 } from 'hash.js';
 import { BIP32Interface, fromSeed } from 'bip32';
 import { mnemonicToSeedSync } from 'bip39';
 import { wordlist } from './wordlist';
-import crypto from '@jafri/isomorphic-webcrypto'
+import crypto from '@jafri/isomorphic-webcrypto';
 
 /**
  * Next 4 functions from https://github.com/polkadot-js/common
@@ -47,7 +47,9 @@ export const generateMnemonic = (strength: number) => {
   strength = strength || 128;
   const r = strength % 32;
   if (r > 0) {
-    throw 'Strength should be divisible by 32, but it is not (' + r + ').';
+    throw new Error(
+      'Strength should be divisible by 32, but it is not (' + r + ').'
+    );
   }
   const buffer = new Uint8Array(strength / 8);
   const data = crypto.getRandomValues(buffer);
@@ -76,6 +78,7 @@ export const calcBip32ExtendedKey = ({
       continue;
     }
 
+    // eslint-disable-next-line eqeqeq
     const hardened = bit[bit.length - 1] == "'";
     const isPriv = !extendedKey.isNeutered();
     const invalidDerivationPath = hardened && !isPriv;
